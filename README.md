@@ -2,7 +2,7 @@
 
 ## Development environment
 
-**Spring Cloud Gateway —** Enable our project to be a ZUUL API gateway
+**Spring Cloud Gateway —** Enable our project to be a Cloud API gateway
 
 **Eureka Discovery Client —** Enable our project to be discovered by a Eureka server and allow our services to communicate with this service in a seamless way.
 
