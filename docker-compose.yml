@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   postgres-server: #name of the first service
-    image: medium/database:latest
+    image: alicetech91/justeat:postgres-database
     container_name: postgres-server
     restart: always
     volumes:
@@ -19,7 +19,7 @@ services:
         aliases:
           - postgres-server
   eureka-service:
-    image: 'eureka-service:latest'
+    image: 'alicetech91/justeat:eureka-service'
     restart: always
     volumes:
       - /opt/workspace/docker/data/logs:/logs:rw
@@ -34,7 +34,7 @@ services:
         aliases:
           - eureka-service  
   menusync-service:
-    image: 'menusync-service:latest'
+    image: 'alicetech91/justeat:menusync-service'
     restart: always
     volumes:
       - /opt/workspace/docker/data/logs:/logs:rw
@@ -49,7 +49,7 @@ services:
     networks:
       microservice_network:
   zuul-service:
-    image: 'zuul-service:latest'
+    image: 'alicetech91/justeat:zuul-service'
     restart: always
     volumes:
       - /opt/workspace/docker/data/logs:/logs:rw
