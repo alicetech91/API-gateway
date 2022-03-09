@@ -12,3 +12,9 @@
  
  we are mapping Spring Cloud Gateway to our menusync service, any request that starts with a http://localhost:8081/menu will redirect to the menySync-service.
  
+## Reason to choose Cloud Gateway
+So, in this case, I've named the service Zuul-service, but in truth, I've used Spring Cloud Gateway. The primary reason for this is that Zuul is built on servlet 2.5 (works with 3.x) , using blocking APIs. It does not support long-lived connections such as websockets.
+
+
+Gateway is built with non-blocking APIs on Spring Framework 5, Project Reactor, and Spring Boot 2.  Websockets are supported, and it's a much better developer experience and provides a flexible way of routing requests based on a number of criteria.
+ 
